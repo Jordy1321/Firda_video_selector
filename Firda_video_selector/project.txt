@@ -1,0 +1,13 @@
+project coming out day 10 oktober 2023
+
+5 filmpjes op een website die automatisch af moeten sluiten.
+
+he lieftst local de filmpjes downloaden
+
+zonder internet de website gebruiken
+
+de gebruiker heeft de keuze tussen 5 verschillende onderwerpen en dus 5 verschillende filmpjes
+
+Firda thema 
+
+4 oktober deadline.

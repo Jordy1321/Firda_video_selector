@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page 2</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Adjust the path to style.css -->
+    <style>
+        /* Center-aligning styles for the button and text */
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .button {
+            margin-bottom: 20px;
+        }
+
+        .text {
+            font-size: 24px;
+            text-align: center;
+            display: none; /* Initially hidden */
+        }
+
+        .center #show-text {
+            color: #B5CCBE
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <button id="start-button" class="button">Start Video</button> <!-- Button to start the video -->
+        <div class="text" id="show-text">placeholder text</div> <!-- Text to show -->
+        <button id="back-button">Back to Home</button> <!-- Add the "button" class -->
+    </div>
+    <div class="video-container" style="display: none;"> <!-- Hide the video container initially -->
+        <video id="video" controls>
+            <source src="video2.mp4" type="video/mp4"> <!-- Adjust the path to your video file -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const startButton = document.getElementById("start-button");
+            const videoContainer = document.querySelector(".video-container");
+            const backButton = document.getElementById("back-button");
+            const showText = document.getElementById("show-text");
+
+            backButton.addEventListener("click", function () {
+                window.location.href = "../index.html";
+            });
+
+            // Function to request fullscreen
+            function requestFullscreen() {
+                const video = document.getElementById("video");
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.mozRequestFullScreen) { // Firefox
+                    video.mozRequestFullScreen();
+                } else if (video.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { // IE/Edge
+                    video.msRequestFullscreen();
+                }
+            }
+
+            // Function to start video and go fullscreen
+            function startVideo() {
+                videoContainer.style.display = "block"; // Show the video container
+                startButton.style.display = "none"; // Hide the start button
+                showText.style.display = "none"; // Hide the text
+                requestFullscreen(); // Request fullscreen
+                setTimeout(() => {
+                    video.play();
+                }, 1000);
+            }
+
+            video.addEventListener("ended", function () {
+                showText.style.display = "block"; // Show the text
+
+                setTimeout(() => {
+                    videoContainer.style.display = "none"; // Hide the video container
+                }, 500);
+
+                setTimeout(function () {
+                    window.location.href = "../index.html";
+                }, 10000); // 10 seconds (adjust as needed)
+
+                // Hide the back button after the video ends
+            });
+
+            startButton.addEventListener("click", startVideo);
+
+        });
+    </script>
+</body>
+</html>

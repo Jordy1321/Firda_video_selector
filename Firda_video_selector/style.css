@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow: hidden;
+    background-image: url('firda_backgroundteams_final-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Style for the button container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top vertically */
+    height: 80vh; /* Reduce the container height */
+    padding-top: 32vh; /* Add space at the top */
+}
+
+/* Style for the buttons */
+button {
+    margin: 10px;
+    padding: 20px 40px; /* Increase button size as needed */
+    background-color: transparent; /* Remove button background */
+    color: #B5CCBE; /* Set button text color */
+    cursor: pointer;
+    border: 2px solid #B5CCBE; /* Add button border */
+    text-decoration: none;
+    border-radius: 10px; /* Add rounded edges */
+}
+
+button:hover {
+    background-color: #B5CCBE;
+}
+
+/* Style for the back button */
+#back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #315857;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#back-button:hover {
+    background-color: #315857;
+    color: #B5CCBE
+}
+
+.video-container {
+    display: block;
+    margin: 20px auto;
+    max-width: 800px; /* Limit the width of the video container */
+    max-height: 80vh; /* Limit the height to 80% of viewport height */
+    overflow: hidden; /* Hide any overflow */
+    position: relative; /* Allow absolute positioning of fullscreen button */
+}
+
+/* Style for the video element inside the container */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Preserve aspect ratio and fit within the container */
+}
+
+/* Style for the full-screen button */
+#fullscreen-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#fullscreen-button:hover {
+    background-color: #005ea6;
+}
+
+/* Style for the replay and back buttons */
+#replay-button,
+#back-home-button {
+    display: none;
+    margin: 20px auto;
+    max-width: 100%; /* Make the buttons responsive */
+}
+
+.menu {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.menu-button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.menu-button:hover {
+    background-color: #005ea6;
+}
