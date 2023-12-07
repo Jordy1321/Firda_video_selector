@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Firda_video_selector",
+			"path": ".."
+		},
+		{
+			"name": "videos",
+			"path": "../../../vsc projects/test/coming_out_project/videos"
+		}
+	],
+	"settings": {}
+}
